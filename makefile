@@ -30,6 +30,7 @@ build/obj/%.o : %.cpp build/dep/%.d build/obj/.STAMP
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 -include $(BIN_NAMES:%=build/dep/%.d)
+-include $(TEST_NAMES:%=build/dep/%.d)
 
 build/dep/%.d : %.cpp build/dep/.STAMP
 	@$(CXX) $(CXXFLAGS) -MM -MT '$@' $< > $@
