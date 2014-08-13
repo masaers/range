@@ -13,6 +13,7 @@ int main(const int argc, const char** argv) {
     cout << i << ' ';
   }
   cout << endl;
+  
   return EXIT_SUCCESS;
 }
 
