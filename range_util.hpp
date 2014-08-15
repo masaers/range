@@ -5,8 +5,9 @@
 #include <iterator>
 
 ///
-/// \todo Figure out the correct guards to make this work
+/// \todo Figure out whether this guard is as tight as it should be.
 ///
+#if __GNUC__ < 4 || (__GNUC__ == 4 && __GNUC_MINOR__ <= 5)
 namespace std {
   template<typename container_T>
   auto begin(container_T&& container) -> decltype(container.begin()) {
@@ -17,6 +18,7 @@ namespace std {
     return container.end();
   }
 }
+#endif
 
 template<typename iterator_T>
 class range_t {

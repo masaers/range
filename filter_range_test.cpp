@@ -9,7 +9,7 @@ int main(const int argc, const char** argv) {
     v.push_back(i);
   }
   auto v2 = make_filter_range(v, [](int i){ return i % 2 == 0; });
-  for (int& i : v2) {
+  for (auto& i : v2) {
     cout << i << ' ';
   }
   cout << endl;
