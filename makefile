@@ -61,7 +61,7 @@ build/test/%.out : build/bin/% build/test/.STAMP
 	  diff $@ $@.old >> build/test/.ERROR \
 	  || echo "REGRESSION TEST FAILED: $<" >> build/test/.ERROR \
 	  ; \
-	  @rm $@.old ) \
+	  rm $@.old ) \
 	else \
 	( $< &> $@; \
           echo "WARNING: No regression test: $<" >> build/test/.ERROR ) \
