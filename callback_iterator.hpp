@@ -1,10 +1,11 @@
 #ifndef COM_MASAERS_CALLBACK_ITERATOR_HPP
 #define COM_MASAERS_CALLBACK_ITERATOR_HPP
+#include <iterator>
 #include <utility>
 
 namespace com_masaers {
   template<typename Func>
-  class callback_iterator_t {
+  class callback_iterator_t : public std::iterator<std::output_iterator_tag, void, void, void, void> {
   public:
     template<typename... Args> callback_iterator_t(Args&&... args)
       : func_m(std::forward<Args>(args)...)
