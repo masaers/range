@@ -13,7 +13,7 @@ LDFLAGS=
 # List of programs
 PROG_NAMES=
 # List of regression tests
-TEST_NAMES=filter_range_test transform_range_test zip_range_test
+TEST_NAMES=filter_range_test transform_range_test zip_range_test callback_iterator_test
 
 
 #
